@@ -18,9 +18,12 @@ publishTo := {
     Some("Artifactory Realm" at artifactory + "sbt-release-local")
 }
 
-// Figure out how to do this with external credentials
-// So that a line like this does not 
-credentials += Credentials("Artifactory Realm", "localhost", "kwalcock", "APAgSddqWKTn2e9sJF73VPd46Zs")
+// credentials += Credentials("Artifactory Realm", "<host>", "<user>", "<password>")
+// The above credentials are recorded in ~/.sbt/.credentials as such:
+// realm=Artifactory Realm
+// host=<host>
+// user=<user>
+// password=<password>
 
 // Let’s remove any repositories for optional dependencies in our artifact.
 pomIncludeRepository := { _ => false }
@@ -86,8 +89,5 @@ releaseProcess := Seq[ReleaseStep](
   releaseStepCommandAndRemaining("+publishSigned"),
   setNextVersion,
   commitNextVersion,
-//  releaseStepCommandAndRemaining("sonatypeReleaseAll"),
   pushChanges
 )
-
-//git.remoteRepo := "git@github.com:clulab/resource.git"

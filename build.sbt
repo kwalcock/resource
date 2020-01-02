@@ -9,7 +9,7 @@ resolvers += "Artifactory" at "http://localhost:8081/artifactory/sbt-release-loc
 
 libraryDependencies ++= {
   Seq(
-    "org.clulab" % "resource" % "0.1.0"
+    "org.clulab" % "resource" % "0.1.2"
   )
 }
 
