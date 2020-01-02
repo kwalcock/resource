@@ -81,13 +81,13 @@ releaseProcess := Seq[ReleaseStep](
   runClean,
   runTest,
   setReleaseVersion,
-//  commitReleaseVersion,
+  commitReleaseVersion,
   tagRelease,
   releaseStepCommandAndRemaining("+publishSigned"),
-  setNextVersion //,
-//  commitNextVersion,
+  setNextVersion,
+  commitNextVersion,
 //  releaseStepCommandAndRemaining("sonatypeReleaseAll"),
-//  pushChanges
+  pushChanges
 )
 
 //git.remoteRepo := "git@github.com:clulab/resource.git"
