@@ -7,6 +7,12 @@ crossPaths := false // This is a resource only and is independent of Scala versi
 
 lazy val core = (project in file("."))
 
+// The resource is presumed to be too large for both GitHub and Maven, so it is copied
+// in from an external directory.  This needs to be configured before release.
+mappings in (Compile, packageBin) ++= Seq(
+  file("../../resource.txt") -> "resource.txt"
+)
+
 publishMavenStyle := true
 
 publishTo := {
