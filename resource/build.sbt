@@ -10,7 +10,7 @@ lazy val core = (project in file("."))
 // The resource is presumed to be too large for both GitHub and Maven, so it is copied
 // in from an external directory.  This needs to be configured before release.
 mappings in (Compile, packageBin) ++= Seq(
-  file("./resources/glove.42B.300d.txt") -> "org/clulab/glove/glove.42B.300d.txt"
+  file("./resources/glove.short") -> "org/clulab/glove/glove.42B.300d.txt"
 )
 
 publishMavenStyle := true
