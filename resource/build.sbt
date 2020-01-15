@@ -25,7 +25,6 @@ publishTo := {
 }
 
 // credentials += Credentials("Artifactory Realm", "<host>", "<user>", "<password>")
-credentials += Credentials("Artifactory Realm", "river.cs.arizona.edu", "kwalcock", "AKCp5e3yEHSQsPNXjs6uKZYW8zVhvtdNxREyjiTPdttYYdTSGemNSUhWvBsp7AsM2zbukRQXu")
 // The above credentials are recorded in ~/.sbt/.credentials as such:
 // realm=Artifactory Realm
 // host=<host>
