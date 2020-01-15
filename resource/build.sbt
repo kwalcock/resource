@@ -16,7 +16,7 @@ mappings in (Compile, packageBin) ++= Seq(
 publishMavenStyle := true
 
 publishTo := {
-  val artifactory = "http://artifactory.cs.arizona.edu:8081/artifactory/"
+  val artifactory = "http://river.cs.arizona.edu:8081/artifactory/"
   
   if (isSnapshot.value)
     Some("Artifactory Realm" at artifactory + "sbt-release-local;build.timestamp=" + new java.util.Date().getTime)
