@@ -34,3 +34,5 @@ project/plugins/project/
 
 # For MacOS filesystem
 .DS_Store
+
+resources

@@ -1,6 +1,6 @@
 import ReleaseTransformations._
 
-name := "resource"
+name := "glove_42B_300d"
 organization := "org.clulab"
 
 crossPaths := false // This is a resource only and is independent of Scala version.
@@ -10,13 +10,13 @@ lazy val core = (project in file("."))
 // The resource is presumed to be too large for both GitHub and Maven, so it is copied
 // in from an external directory.  This needs to be configured before release.
 mappings in (Compile, packageBin) ++= Seq(
-  file("../../resource.txt") -> "resource.txt"
+  file("./resources/glove.42B.300d.txt") -> "org/clulab/glove/glove.42B.300d.txt"
 )
 
 publishMavenStyle := true
 
 publishTo := {
-  val artifactory = "http://localhost:8081/artifactory/"
+  val artifactory = "http://artifactory.cs.arizona.edu:8081/artifactory/"
   
   if (isSnapshot.value)
     Some("Artifactory Realm" at artifactory + "sbt-release-local;build.timestamp=" + new java.util.Date().getTime)
@@ -56,14 +56,14 @@ pomIncludeRepository := { _ => false }
 // However, the developerConnection is undesired, so this is used:
 scmInfo := Some(
   ScmInfo(
-    url("https://github.com/clulab/resource"),
-    "scm:git:https://github.com/clulab/resource.git"
+    url("https://github.com/clulab/glove_42B_300d"),
+    "scm:git:https://github.com/clulab/glove_42B_300d.git"
   )
 )
 
 // This must be added to add to the pom for publishing.
 pomExtra :=
-  <url>https://github.com/clulab/resource</url>
+  <url>https://github.com/clulab/glove_42B_300d</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -72,8 +72,8 @@ pomExtra :=
     </license>
   </licenses>
   <!--scm>
-    <url>https://github.com/clulab/resource</url>
-    <connection>https://github.com/clulab/resource</connection>
+    <url>https://github.com/clulab/glove_42B_300d</url>
+    <connection>https://github.com/clulab/glove_42B_300d</connection>
   </scm-->
   <developers>
     <developer>
